@@ -1,27 +1,39 @@
 ﻿# Candidate Registration System
 
-A full-stack Candidate Registration app.
+A full-stack Candidate Registration application built using **ASP.NET Core Web API**, **JavaScript**, and **SQL Server (LocalDB)**.  
+This project demonstrates CRUD operations, master-detail relationships, and form-based editing with a clean UI.
 
-## Tech Stack
-- ASP.NET Core Web API
-- HTML, CSS, JavaScript (jQuery)
-- SQL Server LocalDB
+---
 
-## Project Structure
-- backend/ → .NET Core Web API
-- frontend/ → UI files
-- database/ → SQL script
+## 🚀 Features
 
-## Setup Instructions
+- Add new candidates
+- Update existing candidates (edit & resubmit)
+- Soft delete candidates
+- Prefix, Gender, and Marital Status master data
+- Date picker for Date of Birth
+- RESTful Web API
+- Clean separation of Backend, Frontend, and Database
+
+---
+
+## 🛠 Tech Stack
 
 ### Backend
-1. Open solution in Visual Studio
-2. Update connection string in `appsettings.json`
-3. Run the project
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server LocalDB
 
 ### Frontend
-- Open `frontend/index.html`
-- Ensure API URL matches backend port
+- HTML5
+- CSS (Bootstrap)
+- JavaScript (jQuery)
 
 ### Database
-- Execute `database/CandidateRegistration.sql` in SQL Server
+- SQL Server
+- SQL script included for easy setup
+
+---
+
+## 📁 Project Structure
+
