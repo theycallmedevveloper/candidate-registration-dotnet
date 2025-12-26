@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+    <style>
+        .form-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #34495e;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .table-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .delete-btn {
+            cursor: pointer;
+            color: #dc3545;
+            font-size: 18px;
+        }
+
+        .delete-btn:hover {
+            color: #a71d2a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="form-title display-3 text-center">Candidate Registration Form</h2>
+        <hr>
+
+        <!-- Single Step Form -->
+        <form id="candidateForm">
+            <div class="form-floating">
+                <div class="row mt-5">
+                    <span>Candidate Name</span>
+                    <div class="col-2">
+                        <select id="PrefixId" name="Prefix_Name" class="form-select form-select-sm" required>
+                            <option value="">Select</option>
+                        </select>
+
+                    </div>
+                    <div class="col-3">
+                        <input type="text" name="firstName" id="fName" class="form-control" placeholder="First name"
+                            required />
+                    </div>
+                    <div class="col-3">
+                        <input type="text" name="middleName" id="mName" class="form-control" placeholder="Middle name"
+                            required />
+                    </div>
+                    <div class="col-3">
+                        <input type="text" name="lastName" id="lName" class="form-control" placeholder="Last name"
+                            required />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="h6 mt-4">Gender</p>
+                <div id="genderContainer" class="row"></div>
+            </div>
+
+            <div>
+                <p class="h6 mt-4">Marital Status</p>
+                <div id="maritalStatusContainer" class="row"></div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-4">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" class="form-control" id="dob" name="dob" required />
+                </div>
+            </div>
+
+            <div>
+                <p class="h4 mt-5">Contact Information</p>
+                <hr>
+
+                <div class="row g-2 mt-4">
+                    <div class="col-8">
+                        <div class="form-floating">
+                            <input type="email" name="email" class="form-control" id="candidateEmail"
+                                placeholder="name@example.com" required />
+                            <label for="candidateEmail">Email address</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating">
+                            <input type="tel" name="phone" maxlength="10" pattern="\d{10}" class="form-control"
+                                placeholder="Phone Number" id="candidatePhone" required />
+                            <label for="candidatePhone">Phone Number</label> 
+                            
+                        </div>
+                    </div>                  
+                </div>
+
+                <nav class="d-flex justify-content-center align-items-center mt-5 mb-5">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    <button type="button" id="clearBtn" class="btn btn-outline-danger btn-lg ms-2">Clear Form</button>
+                </nav>
+            </div>
+        </form>
+
+        <!-- Entries Table -->
+        <div class="table-section">
+            <h3 class="mb-4">Submitted Entries</h3>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" id="entriesTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>DOB</th>
+                            <th>Marital Status</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="entriesBody">
+                        <tr>
+                            <td colspan="8" class="text-center text-muted">No entries yet. Submit the form above to see
+                                data here!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="Script1.js"></script>
+</body>
+
+</html>

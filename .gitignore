@@ -1,0 +1,13 @@
+# Visual Studio
+.vs/
+
+# .NET
+bin/
+obj/
+
+# SQL Server
+*.mdf
+*.ldf
+
+# User secrets
+appsettings.Development.json

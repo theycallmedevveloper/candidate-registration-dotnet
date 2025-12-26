@@ -1,0 +1,34 @@
+{
+  "name": "Untitled request",
+  "request": {
+    "type": "http",
+    "url": "https://localhost:7288/api/candidate",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1766384927192,
+        "key": "Content-Type",
+        "value": "application/json",
+        "isEnabled": true,
+        "description": ""
+      }
+    ],
+    "body": "{\n  \"firstName\": \"Dev\",\n  \"middleName\": \"A\",\n  \"lastName\": \"Jariwala\",\n  \"gender\": \"male\",\n  \"email\": \"dev@test.com\",\n  \"phone\": \"9876543210\"\n}\n",
+    "bodyContainer": {
+      "text": "{\n  \"firstName\": \"Dev\",\n  \"middleName\": \"A\",\n  \"lastName\": \"Jariwala\",\n  \"gender\": \"male\",\n  \"email\": \"dev@test.com\",\n  \"phone\": \"9876543210\"\n}\n",
+      "form": [],
+      "multipartForm": []
+    },
+    "contentType": "text/plain",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    },
+    "pathVariables": []
+  }
+}
