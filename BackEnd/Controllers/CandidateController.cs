@@ -2,6 +2,7 @@
 using CandidateRegistration.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using System.Linq;
 
 namespace CandidateRegistration.Controllers
@@ -39,7 +40,8 @@ namespace CandidateRegistration.Controllers
                     FirstName = c.Candidate_FirstName,
                     MiddleName = c.Candidate_MiddleName,
                     LastName = c.Candidate_LastName,
-                    Dob = c.Candidate_Dob.HasValue ? c.Candidate_Dob.Value.ToString("MM/dd/yyyy") : null,
+                    Dob = c.Candidate_Dob.HasValue ? c.Candidate_Dob.Value.ToString("dd/MM/yyyy") : null,
+
                     Email = c.Candidate_Email,
                     Number = c.Candidate_Num,
                     Prefix = new PrefixDto
@@ -91,7 +93,7 @@ namespace CandidateRegistration.Controllers
                 Candidate_LastName = candidateData.LastName,
                 Gender_Id = candidateData.Gender_Id,
                 MaritalStatus_Id = candidateData.MaritalStatus_Id,
-                Candidate_Dob = DateTime.ParseExact(candidateData.Dob, "MM/dd/yyyy", null),
+                Candidate_Dob = DateOnly.ParseExact(candidateData.Dob, "dd/MM/yyyy", CultureInfo.InvariantCulture),
                 Candidate_Email = candidateData.Candidate_Email,
                 Candidate_Num = candidateData.Candidate_Num,
                 IsActive = true
@@ -124,7 +126,7 @@ namespace CandidateRegistration.Controllers
                     Candidate_LastName = candidateData.LastName,
                     Gender_Id = candidateData.Gender_Id,
                     MaritalStatus_Id = candidateData.MaritalStatus_Id,
-                    Candidate_Dob = DateTime.ParseExact(candidateData.Dob, "MM/dd/yyyy", null),
+                    Candidate_Dob = DateOnly.ParseExact(candidateData.Dob, "dd/MM/yyyy", null),
                     Candidate_Email = candidateData.Candidate_Email,
                     Candidate_Num = candidateData.Candidate_Num,
                     IsActive = true
@@ -153,7 +155,7 @@ namespace CandidateRegistration.Controllers
                     Candidate_LastName = candidateData.LastName,
                     Gender_Id = candidateData.Gender_Id,
                     MaritalStatus_Id = candidateData.MaritalStatus_Id,
-                    Candidate_Dob = DateTime.ParseExact(candidateData.Dob, "MM/dd/yyyy", null),
+                    Candidate_Dob = DateOnly.ParseExact(candidateData.Dob, "dd/MM/yyyy", null),
                     Candidate_Email = candidateData.Candidate_Email,
                     Candidate_Num = candidateData.Candidate_Num,
                     IsActive = true

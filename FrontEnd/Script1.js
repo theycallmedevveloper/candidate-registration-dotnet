@@ -1,7 +1,7 @@
 /* ################--------- Date Picker ---------################ */
 $(document).ready(function () {
     $('#dob').datepicker({
-        format: 'mm/dd/yyyy',
+        format: 'dd/mm/yyyy',
         startDate: '01/01/1900',
         endDate: new Date(),
         autoclose: true,
@@ -19,7 +19,7 @@ $(document).ready(function () {
 let entries = [];
 let editingCandidateId = null;
 
-/* ################--------- API Loaders ---------################ */
+/* ################--------- API Loaders ---------################ 007 */
 function loadPrefixes() {
     $.ajax({
         url: "https://localhost:7288/api/prefix",
@@ -27,7 +27,7 @@ function loadPrefixes() {
         success: function (data) {
             const ddl = $("#PrefixId");
             ddl.empty();
-            ddl.append(`<option value="">Select</option>`);
+            ddl.append(`<option value="">Marital Status</option>`);
             data.forEach(p => {
                 ddl.append(`<option value="${p.prefix_Id}">${p.prefix_Name}</option>`);
             });
@@ -209,6 +209,20 @@ function renderTable() {
     }).join('');
 }
 
+function toMMDDYYYY(dateStr) {
+    if (!dateStr) return "";
+
+    // handles "2025-12-26" and "2025-12-26T00:00:00"
+    const date = new Date(dateStr);
+    const dd = String(date.getDate()).padStart(2, '0');
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+
+    const yyyy = date.getFullYear();
+
+    return `${dd}/${mm}/${yyyy}`;
+}
+
+
 /* ################--------- Edit Entry ---------################ */
 function editEntry(id) {
     $.ajax({
@@ -217,13 +231,15 @@ function editEntry(id) {
         success: function (data) {
 
             editingCandidateId = data.candidate_Id;
-        
+
             $("#PrefixId").val(data.prefix_Id || data.prefix?.prefix_Id);
 
             $("#fName").val(data.candidate_FirstName || data.firstName);
             $("#mName").val(data.candidate_MiddleName || data.middleName);
             $("#lName").val(data.candidate_LastName || data.lastName);
-            $("#dob").val(data.candidate_Dob || data.dob);
+            // $("#dob").val(data.candidate_Dob || data.dob);
+            $("#dob").val(toMMDDYYYY(data.candidate_Dob || data.dob));
+
             $("#candidateEmail").val(data.candidate_Email || data.email);
             $("#candidatePhone").val(data.candidate_Num || data.number);
             $(`input[name="genderId"][value="${data.gender_Id || data.gender?.gender_Id}"]`)

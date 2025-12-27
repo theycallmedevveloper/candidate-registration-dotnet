@@ -37,3 +37,18 @@ This project demonstrates CRUD operations, master-detail relationships, and form
 
 ## 📁 Project Structure
 
+CandidateRegistration/
+│
+├── BackEnd/
+│ └── CandidateRegistration (ASP.NET Core Web API)
+│
+├── FrontEnd/
+│ ├── index.html
+│ ├── Script1.js
+│ └── CSS / Bootstrap
+│
+├── DataBase/
+│ └── CandidateRegistration.sql
+│
+├── README.md
+└── .gitignore

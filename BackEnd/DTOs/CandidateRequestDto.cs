@@ -2,7 +2,7 @@
 {
     public class CandidateRequestDto
     {
-
+            
         public int? Candidate_Id { get; set; }
         public int? Prefix_Id { get; set; }
         public string? FirstName { get; set; }

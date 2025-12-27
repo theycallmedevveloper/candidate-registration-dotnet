@@ -7,11 +7,10 @@
     <title>Candidate Registration Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"
-        rel="stylesheet">
+          rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
     <style>
         .form-title {
             font-size: 2.2rem;
@@ -36,9 +35,9 @@
             font-size: 18px;
         }
 
-        .delete-btn:hover {
-            color: #a71d2a;
-        }
+            .delete-btn:hover {
+                color: #a71d2a;
+            }
     </style>
 </head>
 
@@ -54,21 +53,21 @@
                     <span>Candidate Name</span>
                     <div class="col-2">
                         <select id="PrefixId" name="Prefix_Name" class="form-select form-select-sm" required>
-                            <option value="">Select</option>
+                            <option value="">Merital Status</option>
                         </select>
 
                     </div>
                     <div class="col-3">
                         <input type="text" name="firstName" id="fName" class="form-control" placeholder="First name"
-                            required />
+                               required />
                     </div>
                     <div class="col-3">
                         <input type="text" name="middleName" id="mName" class="form-control" placeholder="Middle name"
-                            required />
+                               required />
                     </div>
                     <div class="col-3">
                         <input type="text" name="lastName" id="lName" class="form-control" placeholder="Last name"
-                            required />
+                               required />
                     </div>
                 </div>
             </div>
@@ -97,18 +96,18 @@
                     <div class="col-8">
                         <div class="form-floating">
                             <input type="email" name="email" class="form-control" id="candidateEmail"
-                                placeholder="name@example.com" required />
+                                   placeholder="name@example.com" required />
                             <label for="candidateEmail">Email address</label>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-floating">
                             <input type="tel" name="phone" maxlength="10" pattern="\d{10}" class="form-control"
-                                placeholder="Phone Number" id="candidatePhone" required />
-                            <label for="candidatePhone">Phone Number</label> 
-                            
+                                   placeholder="Phone Number" id="candidatePhone" required />
+                            <label for="candidatePhone">Phone Number</label>
+
                         </div>
-                    </div>                  
+                    </div>
                 </div>
 
                 <nav class="d-flex justify-content-center align-items-center mt-5 mb-5">
@@ -137,8 +136,10 @@
                     </thead>
                     <tbody id="entriesBody">
                         <tr>
-                            <td colspan="8" class="text-center text-muted">No entries yet. Submit the form above to see
-                                data here!</td>
+                            <td colspan="8" class="text-center text-muted">
+                                No entries yet. Submit the form above to see
+                                data here!
+                            </td>
                         </tr>
                     </tbody>
                 </table>
